@@ -10,6 +10,9 @@
 - [Part 1: Building APIs with GraphQL and Salesforce](https://www.mav3rik.com/blog/salesforce-graphql)
 - [Part 2: Building APIs with GraphQL and Salesforce](#)
 
+## Preview
+![](/docs/images/graphql.png)
+
 ## Objectives
 - Use nForce to integrate and perform queries with Salesforce
 - Utilise existing patterns in the project: [Node nForce](https://github.com/Gurenax/node-nforce)
