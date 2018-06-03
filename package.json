@@ -1,0 +1,23 @@
+{
+  "name": "graphql-node-nforce",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Glenn Dimaliwat",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "nforce": "^1.10.0"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js",
+    "test": "jshint index.js lib/ schema/"
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.1",
+    "jshint": "^2.9.5",
+    "nodemon": "^1.17.4"
+  }
+}
