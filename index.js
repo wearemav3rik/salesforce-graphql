@@ -11,41 +11,35 @@ const rootSchema = require('./schema/root')
 const server = express()
 const PORT = process.env.PORT || 4000
 
-
 // Initialise dotenv
 require('dotenv').config()
 
-// Initialise nForce and connection parameters for Salesforce Connected App
-const nforce = require('nforce')
-const org = nforce.createConnection({
+// Initialise jsforce and connection parameters for Salesforce Connected App
+const jsforce = require('jsforce')
+const org = new jsforce.Connection({
   clientId: process.env.CONSUMER_KEY,
   clientSecret: process.env.CONSUMER_SECRET,
-  redirectUri: 'https://localhost:3000/oauth/_callback',
-  environment: 'production',
-  mode: 'single'
+  redirectUri: 'https://localhost:3000/oauth/_callback'
 })
 const salesforce = require('./database/salesforce')(org)
 
-// Authenticate to salesforce using single user mode
-org.authenticate(
-  {
-    username: process.env.SALESFORCE_USERNAME,
-    password: process.env.SALESFORCE_PASSWORD,
-    securityToken: process.env.SALESFORCE_SECURITY_TOKEN
-  },
-  (error, response) => {
-    assert.equal(error, null)
-    // GraphQL middleware
-    server.use('/graphql', (req, res) => {
-      // TODO: Use facebook dataloader to cache queries
-      graphqlHTTP({
-        schema: rootSchema,
-        graphiql: true,
-        context: { salesforce }
-      })(req, res)
-    })
-  }
-)
+// Authenticate to salesforce
+org.login(
+  process.env.SALESFORCE_USERNAME,
+  process.env.SALESFORCE_PASSWORD+process.env.SALESFORCE_SECURITY_TOKEN
+).then(response => {
+  // GraphQL middleware
+  server.use('/graphql', (req, res) => {
+    // TODO: Use facebook dataloader to cache queries
+    graphqlHTTP({
+      schema: rootSchema,
+      graphiql: true,
+      context: { salesforce }
+    })(req, res)
+  })
+}).catch(error => {
+  assert.equal(error, null)
+})
 
 // Error handler
 server.use((error, req, res, next) => {
