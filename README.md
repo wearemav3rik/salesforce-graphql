@@ -10,6 +10,9 @@
 - [Part 1: Building APIs with GraphQL and Salesforce](https://www.mav3rik.com/blog/salesforce-graphql)
 - [Part 2: Building APIs with GraphQL and Salesforce](#)
 
+## Major Update
+- The project is now using [jsforce](https://github.com/jsforce/jsforce) instead of nForce
+
 ## Preview
 ![](/docs/images/graphql.png)
 
@@ -36,11 +39,11 @@ yarn start
 ---
 
 ## Objectives
-- Use nForce to integrate and perform queries with Salesforce
+- Use `nForce` to integrate and perform queries with Salesforce
 - Utilise existing patterns in the project: [Node nForce](https://github.com/Gurenax/node-nforce)
 - Create an easy to use pattern for GraphQL and Salesforce
 - Utilise these patterns as back-end for React and React Native salesforce projects
-
+- Replace `nForce` library with `jsforce`
 
 ## Dependencies
 ### Environment Variables
@@ -65,8 +68,6 @@ SALESFORCE_SECURITY_TOKEN =
 
 ## Contributing
 ### Todos
-- Use jsforce instead of nForce
-  - [jsforce](https://github.com/jsforce/jsforce)
 - Add more mutations
   - Create multiple accounts
   - Update multiple accounts
