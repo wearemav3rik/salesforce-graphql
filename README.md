@@ -39,11 +39,12 @@ yarn start
 ---
 
 ## Objectives
-- Use `nForce` to integrate and perform queries with Salesforce
-- Utilise existing patterns in the project: [Node nForce](https://github.com/Gurenax/node-nforce)
+- ~~Use `nForce` to integrate and perform queries with Salesforce~~
+- ~~Utilise existing patterns in the project: [Node nForce](https://github.com/Gurenax/node-nforce)~~
+- Use `jsforce` to integrate and perform queries with Salesforce
 - Create an easy to use pattern for GraphQL and Salesforce
 - Utilise these patterns as back-end for React and React Native salesforce projects
-- Replace `nForce` library with `jsforce`
+
 
 ## Dependencies
 ### Environment Variables
@@ -58,6 +59,7 @@ SALESFORCE_SECURITY_TOKEN =
 
 ### Libraries
 - Run `yarn install` to install these dependencies:
+  - [jsforce](https://github.com/jsforce/jsforce)
   - [nforce](https://github.com/kevinohara80/nforce)
   - [node-nforce](https://github.com/Gurenax/node-nforce)
   - [GraphQl](https://github.com/graphql/graphql-js)
