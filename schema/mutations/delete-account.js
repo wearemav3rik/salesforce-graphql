@@ -13,9 +13,9 @@ const AccountInputType = require('../inputs/account-input')
 module.exports = {
   type: AccountType,
   args: {
-    input: { type: new GraphQLNonNull(AccountInputType) }
+    Id: { type: new GraphQLNonNull(GraphQLID) }
   },
-  resolve: (obj, { input }, { salesforce }) => {
-    return salesforce.deleteAccount(input)
+  resolve: (obj, args, { salesforce }) => {
+    return salesforce.deleteAccount(args.Id)
   }
 }
