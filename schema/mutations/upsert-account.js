@@ -16,6 +16,6 @@ module.exports = {
     input: { type: new GraphQLNonNull(AccountInputType) }
   },
   resolve: (obj, { input }, { salesforce }) => {
-    return salesforce.upsertAccount(input)
+    return salesforce.upsertAccount(input, 'ExtId__c')
   }
 }
