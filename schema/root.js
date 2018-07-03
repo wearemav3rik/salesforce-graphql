@@ -19,28 +19,28 @@ const RootQueryType = new GraphQLObjectType({
           return "Hello World from Mav3rik!"
         }
       },
-      accounts: {
+      Accounts: {
         type: new GraphQLList( AccountType ),
         resolve: (obj, args, { salesforce }) => {
           return salesforce.getAccounts()
         }
       },
-      accountsById: {
+      AccountsById: {
         type: new GraphQLList( AccountType ),
         args: {
-          id: { type: new GraphQLNonNull(GraphQLID) }
+          Id: { type: new GraphQLNonNull(GraphQLID) }
         },
         resolve: (obj, args, { salesforce }) => {
-          return salesforce.getAccountById(args.id) 
+          return salesforce.getAccountById(args.Id) 
         }
       },
-      accountsByName: {
+      AccountsByName: {
         type: new GraphQLList( AccountType ),
         args: {
-          name: { type: new GraphQLNonNull(GraphQLString) }
+          Name: { type: new GraphQLNonNull(GraphQLString) }
         },
         resolve: (obj, args, { salesforce }) => {
-          return salesforce.getAccountByName(args.name) 
+          return salesforce.getAccountByName(args.Name) 
         }
       }
     }
@@ -59,7 +59,7 @@ const RootMutationType = new GraphQLObjectType({
     AddAccount: AddAccountMutation,
     UpdateAcconunt: UpdateAccountMutation,
     DeleteAccount: DeleteAccountMutation,
-    UpsertAccount: UpsertAccountMutation
+    UpsertAccountByExternalID: UpsertAccountMutation
   })
 })
 
