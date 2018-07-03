@@ -1,7 +1,7 @@
 
 <h1 align="center">Salesforce + GraphQL</h1>
 <p align="center">☁︎ Building APIs with GraphQL and Salesforce</p>
-<p align="center"><a href="https://travis-ci.com/Gurenax/graphql-node-nforce/"><img src="https://travis-ci.com/Gurenax/graphql-node-nforce.svg?branch=master"/></a>
+<p align="center"><a href="https://travis-ci.com/Gurenax/salesforce-graphql/"><img src="https://travis-ci.com/Gurenax/salesforce-graphql.svg?branch=master"/></a>
 </p>
 
 ---
