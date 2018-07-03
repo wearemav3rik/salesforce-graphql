@@ -8,7 +8,7 @@
 
 ## Blogs
 - [Part 1: Building APIs with GraphQL and Salesforce](https://www.mav3rik.com/blog/salesforce-graphql)
-- [Part 2: Building APIs with GraphQL and Salesforce](#)
+- [Part 2: Building APIs with GraphQL and Salesforce](https://www.mav3rik.com/blog/salesforce-graphql-1)
 
 ## Major Update
 - The project is now using [jsforce](https://github.com/jsforce/jsforce) instead of nForce
