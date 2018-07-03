@@ -4,7 +4,7 @@ const {
   updateRecord,
   deleteRecord,
   upsertRecord
-} = require('../lib/nforce')
+} = require('../lib/jsforce')
 const { mapRecordsToFields } = require('../lib/utils')
 
 module.exports = org => {
@@ -12,50 +12,47 @@ module.exports = org => {
     async getAccounts() {
       const response = await query(
         org,
-        `select Id, Name, Description, SLA__c from Account`,
-        null
+        `select Id, Name, Description, SLA__c from Account`
       )
-      return mapRecordsToFields(response)
+      return response.records
     },
 
     async getAccountById(id) {
       const response = await query(
         org,
-        `select Id, Name, Description, SLA__c from Account WHERE Id = '${id}'`,
-        null
+        `select Id, Name, Description, SLA__c from Account WHERE Id = '${id}'`
       )
-      return mapRecordsToFields(response)
+      return response.records
     },
 
     async getAccountByName(name) {
       const response = await query(
         org,
-        `select Id, Name, Description, SLA__c from Account WHERE Name = '${name}'`,
-        null
+        `select Id, Name, Description, SLA__c from Account WHERE Name = '${name}'`
       )
-      return mapRecordsToFields(response)
+      return response.records
     },
 
     async createAccount(record) {
-      const response = await createRecord(org, 'Account', record, null)
-      record.id = response.id
+      const response = await createRecord(org, 'Account', record)
+      record.Id = response.id
       return record
     },
 
     async updateAccount(record) {
-      const response = await updateRecord(org, 'Account', record, null)
+      const response = await updateRecord(org, 'Account', record)
       return record
     },
 
-    async deleteAccount(record) {
-      const response = await deleteRecord(org, 'Account', record, null)
-      record.id = response.id
-      return record
+    async deleteAccount(recordId) {
+      const response = await deleteRecord(org, 'Account', recordId)
+      response.Id = response.id
+      return response
     },
 
-    async upsertAccount(record) {
-      const response = await upsertRecord(org, 'Account', record, null)
-      record.id = response.id
+    async upsertAccount(record, externalIdFieldName) {
+      const response = await upsertRecord(org, 'Account', record, externalIdFieldName)
+      record.Id = response.id
       return record
     }
   }
