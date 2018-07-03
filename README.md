@@ -65,7 +65,8 @@ SALESFORCE_SECURITY_TOKEN =
 
 ## Contributing
 ### Todos
-- Integrate with composite API instead of using nForce
+- Use jsforce instead of nForce
+  - [jsforce](https://github.com/jsforce/jsforce)
 - Add more mutations
   - Create multiple accounts
   - Update multiple accounts
