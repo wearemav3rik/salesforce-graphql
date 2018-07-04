@@ -15,13 +15,13 @@ const PORT = process.env.PORT || 4000
 require('dotenv').config()
 
 // Initialise jsforce and connection parameters for Salesforce Connected App
-const jsforce = require('jsforce')
-const org = new jsforce.Connection({
+const { connectToOrg } = require('./lib/jsforce')
+const org = connectToOrg({
   clientId: process.env.CONSUMER_KEY,
   clientSecret: process.env.CONSUMER_SECRET,
   redirectUri: 'https://localhost:3000/oauth/_callback'
 })
-const salesforce = require('./database/salesforce')(org)
+const salesforceContext = require('./database/salesforce')(org)
 
 // Authenticate to salesforce
 org.login(
@@ -34,7 +34,7 @@ org.login(
     graphqlHTTP({
       schema: rootSchema,
       graphiql: true,
-      context: { salesforce }
+      context: { salesforceContext }
     })(req, res)
   })
 }).catch(error => {
