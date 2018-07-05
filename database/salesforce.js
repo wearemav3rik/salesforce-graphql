@@ -58,7 +58,6 @@ module.exports = org => {
 
     async createMultipleAccounts(records) {
       const response = await createRecord(org, 'Account', records)
-      console.log(response)
       const recordsWithId = records.map((record, index) => {
         record.Id = response[index].id
         return record
