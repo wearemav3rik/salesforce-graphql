@@ -51,6 +51,7 @@ const AddAccountMutation = require('./mutations/add-account')
 const UpdateAccountMutation = require('./mutations/update-account')
 const DeleteAccountMutation = require('./mutations/delete-account')
 const UpsertAccountMutation = require('./mutations/upsert-account')
+const AddMultipleAccountMutation = require('./mutations/add-multiple-accounts')
 
 const RootMutationType = new GraphQLObjectType({
   name: 'RootMutation',
@@ -59,7 +60,8 @@ const RootMutationType = new GraphQLObjectType({
     AddAccount: AddAccountMutation,
     UpdateAcconunt: UpdateAccountMutation,
     DeleteAccount: DeleteAccountMutation,
-    UpsertAccountByExternalID: UpsertAccountMutation
+    UpsertAccountByExternalID: UpsertAccountMutation,
+    AddMultipleAccountMutation: AddMultipleAccountMutation
   })
 })
 
