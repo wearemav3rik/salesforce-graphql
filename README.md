@@ -71,7 +71,7 @@ SALESFORCE_SECURITY_TOKEN =
 ## Contributing
 ### Todos
 - Add more mutations
-  - Create multiple accounts
+  - ~~Create multiple accounts~~
   - Update multiple accounts
   - Delete multiple accounts
   - Upsert multiple accounts
