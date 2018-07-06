@@ -72,7 +72,7 @@ SALESFORCE_SECURITY_TOKEN =
 ### Todos
 - Add more mutations
   - ~~Create multiple accounts~~
-  - Update multiple accounts
+  - ~~Update multiple accounts~~
   - Delete multiple accounts
   - Upsert multiple accounts
 - Use facebook dataloader to improve query scalability
