@@ -63,6 +63,11 @@ module.exports = org => {
         return record
       })
       return recordsWithId
+    },
+
+    async updateMultipleAccounts(records) {
+      const response = await updateRecord(org, 'Account', records)
+      return records
     }
   }
 }
