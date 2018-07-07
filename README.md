@@ -12,6 +12,7 @@
 
 ## Major Update
 - The project is now using [jsforce](https://github.com/jsforce/jsforce) instead of nForce
+- Added CRUDs for multiple account records.
 
 ## Preview
 ![](/docs/images/graphql.png)
