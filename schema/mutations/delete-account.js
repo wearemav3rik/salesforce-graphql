@@ -8,7 +8,7 @@ const {
 
 const AccountType = require('../types/account')
 
-const AccountInputType = require('../inputs/account-input')
+// const AccountInputType = require('../inputs/account-input')
 
 module.exports = {
   type: AccountType,
