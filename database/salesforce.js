@@ -68,6 +68,16 @@ module.exports = org => {
     async updateMultipleAccounts(records) {
       const response = await updateRecord(org, 'Account', records)
       return records
+    },
+
+    async deleteMultipleAccounts(recordIds) {
+      const response = await deleteRecord(org, 'Account', recordIds)
+      const recordsWithId = recordIds.map((recordId, index) => {
+        return {
+          Id: recordId
+        }
+      })
+      return recordsWithId
     }
   }
 }
