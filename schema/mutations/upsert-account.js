@@ -1,8 +1,7 @@
 const {
   GraphQLInputObjectType,
   GraphQLString,
-  GraphQLNonNull,
-  GraphQLID
+  GraphQLNonNull
 } = require('graphql')
 
 
