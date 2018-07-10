@@ -78,6 +78,11 @@ module.exports = org => {
         }
       })
       return recordsWithId
+    },
+
+    async upsertMultipleAccounts(records, externalIdFieldName) {
+      const response = await upsertRecord(org, 'Account', records, externalIdFieldName)
+      return mapRecordsToFields
     }
   }
 }
