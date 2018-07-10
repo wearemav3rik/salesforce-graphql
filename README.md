@@ -75,5 +75,5 @@ SALESFORCE_SECURITY_TOKEN =
   - ~~Create multiple accounts~~
   - ~~Update multiple accounts~~
   - ~~Delete multiple accounts~~
-  - Upsert multiple accounts
+  - ~~Upsert multiple accounts~~
 - Use facebook dataloader to improve query scalability
