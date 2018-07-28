@@ -15,18 +15,42 @@ const RootQueryType = new GraphQLObjectType({
     return {
       hello: {
         type: GraphQLString,
+        description: `
+        query hello {
+          hello
+        }`,
         resolve: (obj, args, { salesforce }) => {
           return "Hello World from Mav3rik!"
         }
       },
       Accounts: {
         type: new GraphQLList( AccountType ),
+        description: `
+        query getAllAccounts {
+          Accounts {
+            Id
+            Name
+            SLA__c
+            Description
+            ExtId__c
+          }
+        }`,
         resolve: (obj, args, { salesforce }) => {
           return salesforce.getAccounts()
         }
       },
       AccountsById: {
         type: new GraphQLList( AccountType ),
+        description: `
+        query getOneAccountById($Id: ID!) {
+          AccountsById(Id: $Id) {
+            Id
+            Name
+            SLA__c
+            Description
+            ExtId__c
+          }
+        }`,
         args: {
           Id: { type: new GraphQLNonNull(GraphQLID) }
         },
@@ -36,6 +60,16 @@ const RootQueryType = new GraphQLObjectType({
       },
       AccountsByName: {
         type: new GraphQLList( AccountType ),
+        description: `
+        query getOneAccountByName($Name: String!) {
+          AccountsByName(Name: $Name) {
+            Id
+            Name
+            SLA__c
+            Description
+            ExtId__c
+          }
+        }`,
         args: {
           Name: { type: new GraphQLNonNull(GraphQLString) }
         },
