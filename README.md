@@ -76,4 +76,7 @@ SALESFORCE_SECURITY_TOKEN =
   - ~~Update multiple accounts~~
   - ~~Delete multiple accounts~~
   - ~~Upsert multiple accounts~~
+- Fill up GraphiQL documentation
+  - ~~queries~~
+  - mutation
 - Use facebook dataloader to improve query scalability
